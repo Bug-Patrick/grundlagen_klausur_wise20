@@ -56,11 +56,15 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=6 P]
-		
+		Volumenmodelle i L Volumina vollständig zu beschreiben und Körper zu definieren.
+		Nennen Sie die verschiedenen Volumenmodelle basierend auf den unterschiedlichen Datenstrukturen.
+		Beschreiben Sie jedes Volumenmodel in einem Satz.
 	\end{subtask}
 	
 	\begin{subtask}[credit=5 P]
-		
+		Im Rahmen der Volumenmodelle ist der Unterschied zwischen Geometrie und Topologie wichtig.
+		Wie sind Begr definiert?
+		Stelle Sie jeweilige Elemente in einem Schaubild gegenüber.
 	\end{subtask}
 	
 \end{task}
@@ -84,8 +88,9 @@
 \end{task}
 
 \begin{task}[credit=15{,}5 P]{Datenmanagementsysteme}
+	% Reihenfolge?
 	\begin{subtask}[credit=5 P]
-		
+		 Produktrepräsentationen von Einzeltteilmodellierung, CFD, FEM, RPT CAD/CAM
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
@@ -93,33 +98,46 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=2{,}5 P]
-		
+		Was sind Inputdeck und Outputdeck und welche "Informationen" oder so beeinhalten sie
 	\end{subtask}
 	
+	% Aus Skript so ungefähr zur Einleitung:
+	Unterschiedliche Gründe für den Einsatz von Produktdatenmanagementsystemen sowie deren konkrete Einsatzziele ergeben sich aus den Zielgrößen der Produktentwicklung:
+	\begin{itemize}
+		\item Erhöhung der Produktqualität
+		...
+	\end{itemize} %?
+	
 	\begin{subtask}[credit=4 P]
-		
+		Funktionen von Produktdatenmanagementsystemen
+		+ Methoden der Verbesserung
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
-		
+		2 Beispiele der Metadaten in SDM
 	\end{subtask}
 \end{task}
 
 \begin{task}[credit=18{,}5 P]{CAE-Prozessketten}
+	% Reihenfolge?
 	\begin{subtask}[credit=2 P]
-		
+		Ordnen Sie die folgenden Lastfälle den "Prozessen" zu:
+		MKS, FEM x2, CFD, Kräfte/Momente, Druck, Bewegungsbahn, Temperatur
+		Strömungsimulation, Bewegungsabläufe, Temperaturverteilung/ Wärmeübertragung, Strukturmechanik %ähnlicher Wortlaut
 	\end{subtask}
 	
 	\begin{subtask}[credit=4 P]
-		
+		Unterscheidungskriterium für MKS Simulationen und in welche 2 Arten die Mehrkörper analyse unterteilt werden
+		+ 3 Anwendungsfälle %?
 	\end{subtask}	
 	
 	\begin{subtask}[credit=4 P]
-		
+		FEM-Prozesskette als Stichpunkte
+		% welche verfahren es zur netzerstellung von fe gibt
 	\end{subtask}
 	
 	\begin{subtask}[credit=2{,}5 P]
-		
+		Welche Randbedingungen können in der CFD angegeben werden?
 	\end{subtask}
 	
 	\begin{subtask}[credit=4 P]
@@ -127,21 +145,29 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
-		
+		Nennen sie die beiden Formulierungen in der CFD (Netzgenerierung)
 	\end{subtask}
 \end{task}
 
 \begin{task}[credit=23 P]{FEM}
 	\begin{subtask}[credit=5 P]
-		
+		Nennen Sie die Berechnungsschritte, die zur Berechnung der an Knoten wirkenden Kräfte mittels der FE-Methode durchgeführt werden müssen.
+		Beachten Sie dabei auch die Reihenfolge.
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
-		
+		Geben Sie die Federkonstante $k_i=\frac{EA}{L_i}$ der drei Stäbe in Abhängigkeit der gegebenen Größen E, A und L an.
+		Beachten Sie $L_1 = L, L_1 \ne L_2 = L_3$.
 	\end{subtask}
 	
+	Zur Ermittlung der wirkenden Kräfte muss das Gleichungssystem $f = K * u$ gelöst werden.
+	
 	\begin{subtask}[credit=16 P]
-		
+		Ermitteln Sie die globale Steifigkeitsmatrix $\mathbf{K}$ für das gegebene Stabwerk.
+		Dokumentieren Sie Zwischenergebnisse.
+		Beachten Sie das gegebene Koordinatensystem.
+		Nehmen Sie nur für diesen Aufgabenteil für die Federkonstante an: $k_1 = k_2 = k_3 = k$.
+		\textit{Hinweis: Das Lösen der Meister Zahlenwerte run}
 	\end{subtask}
 \end{task}
 
