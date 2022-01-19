@@ -9,6 +9,53 @@
 \usepackage[autostyle]{csquotes}
 \usepackage{inputenc}
 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{siunitx}
+
+\usepackage{float}
+
+\usepackage{graphicx}
+%\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{patterns}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hacked version of usetikzlibrary to work around writeLaTeX file naming
+% restrictions:
+\makeatletter
+\def\underscoreusetikzlibrary{\pgfutil@ifnextchar[{\underscoreuse@tikzlibrary}{\underscoreuse@@tikzlibrary}}%}
+\def\underscoreuse@tikzlibrary[#1]{\underscoreuse@@tikzlibrary{#1}}
+\def\underscoreuse@@tikzlibrary#1{%
+	\edef\pgf@list{#1}%
+	\pgfutil@for\pgf@temp:=\pgf@list\do{%
+		\expandafter\pgfkeys@spdef\expandafter\pgf@temp\expandafter{\pgf@temp}%
+		\ifx\pgf@temp\pgfutil@empty
+		\else
+		\expandafter\ifx\csname tikz@library@\pgf@temp @loaded\endcsname\relax%
+		\expandafter\global\expandafter\let\csname tikz@library@\pgf@temp @loaded\endcsname=\pgfutil@empty%
+		\expandafter\edef\csname tikz@library@#1@atcode\endcsname{\the\catcode`\@}
+		\expandafter\edef\csname tikz@library@#1@barcode\endcsname{\the\catcode`\|}
+		\catcode`\@=11
+		\catcode`\|=12
+		\input tikzlibrary\pgf@temp_code.tex
+		\catcode`\@=\csname tikz@library@#1@atcode\endcsname
+		\catcode`\|=\csname tikz@library@#1@barcode\endcsname
+		\fi%
+		\fi
+	}%
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\underscoreusetikzlibrary{mec}
+
+
 \ConfigureHeadline{
 	headline={Name:  Matrikelnummer: }
 }
@@ -19,26 +66,30 @@
 %\subtitle{Untertitel}
 \author{Prof. Dr.-Ing. R. Anderl}
 \term{Wintersemester 2021}
-\date{17.04.2020}
+\date{17.04.2021}
 
 \maketitle
 
+% Aufgabe 1
 \begin{task}[credit=13 P]{Geometriemodelle}
 	\begin{subtask}[credit=4 P]
 		Das abgebildete Bauteil wurde mit verschiedenen Features (Konstruktionselementen) modelliert.
 		Benennen Sie die einzelnen Features und tragen Sie dies unter Berücksichtigung der Reihenfolge (vom Groben ins Feine) in die untenstehende Liste eindeutig ein, sodass eine Zuordnung der Features zur Geometrie möglich ist.
 		
 		\textit{Hinweis: Keine Features auf der Rückseite.} % zus. ?
+		% 7 Linien
+		
 	\end{subtask}
 	
 	\begin{subtask}[credit=9 P]
-		Erstellen sie anhand der unten gegebenen Volumenprimitiven (Q und Z) den CSG-Baum für das abgebildete Bauteil.
+		Erstellen sie anhand der unten gegebenen Volumenprimitiven (\textbf{Q}uader und \textbf{Z}ylinder) den CSG-Baum für das abgebildete Bauteil.
 		Verwenden Sie bekannte mengentheoretische Operatoren.
 	\end{subtask}
 
 	
 \end{task}
 
+% Aufgabe 2
 \begin{task}[credit=21 P]{Geometrische Modellierung und Volumenmodelle}
 	\begin{subtask}[credit=6 P]
 		Nennen Sie Merkmale geometrischer Modellierung.
@@ -46,12 +97,12 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=2{,}5 P]
-		Ein wichtige Geometrieelement sind die Freiformkurven.
+		Ein wichtiges Geometrieelement sind die Freiformkurven.
 		Welche Freiformkurven wurden im Rahmen der Vorlesung behandelt und in welche 2 Kategorien lassen sich die Kurven unterscheiden.
 	\end{subtask}
 	
 	\begin{subtask}[credit=1{,}5 P]
-		Welche Möglichkeiten zur Beeinflussung der Kurv gibt Hermitkurve.
+		Welche Möglichkeiten zur Beeinflussung der Kurve gibt es für Hermitkurven.
 		Skizzieren sie ein Beispiel.
 	\end{subtask}
 	
@@ -63,12 +114,13 @@
 	
 	\begin{subtask}[credit=5 P]
 		Im Rahmen der Volumenmodelle ist der Unterschied zwischen Geometrie und Topologie wichtig.
-		Wie sind Begr definiert?
-		Stelle Sie jeweilige Elemente in einem Schaubild gegenüber.
+		Wie sind diese Begriffe definiert?
+		Stellen Sie die jeweiligen Elemente in einem Schaubild gegenüber.
 	\end{subtask}
 	
 \end{task}
 
+% Aufgabe 3
 \begin{task}[credit=9 P]{Geometrische Modellierung}
 	\begin{subtask}[credit=2 P]
 		geometrische Transformation im 3d Raum; Wieso 4*4 und ...
@@ -87,6 +139,7 @@
 	\end{subtask}
 \end{task}
 
+% Aufgabe 4
 \begin{task}[credit=15{,}5 P]{Datenmanagementsysteme}
 	% Reihenfolge?
 	\begin{subtask}[credit=5 P]
@@ -118,6 +171,7 @@
 	\end{subtask}
 \end{task}
 
+% Aufgabe 5
 \begin{task}[credit=18{,}5 P]{CAE-Prozessketten}
 	% Reihenfolge?
 	\begin{subtask}[credit=2 P]
@@ -149,11 +203,33 @@
 	\end{subtask}
 \end{task}
 
+% Aufgabe 6
 \begin{task}[credit=23 P]{FEM}
 	\begin{subtask}[credit=5 P]
 		Nennen Sie die Berechnungsschritte, die zur Berechnung der an Knoten wirkenden Kräfte mittels der FE-Methode durchgeführt werden müssen.
 		Beachten Sie dabei auch die Reihenfolge.
 	\end{subtask}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[node distance=1mm]
+			\coordinate (a) at (1,1);
+			\coordinate (b) at (1,4);
+			\coordinate (c) at (4,1);
+			
+			\node[draw, hinge, grounded] (A) at (a) {};
+			\node[draw, support, grounded] (C) at (c) {};
+			
+			\draw[black] (A) node[left] {$1$} -- (b) node[left] {$2$} -- (C) node[right] {$3$} -- (A);
+			\draw[black] (2.5,1) node[above] {$(1)$};
+			\draw[black] (1,2.5) node[right] {$(2)$};
+			\draw[black] (2.6,2.3) node[left] {$(3)$};
+			
+			\draw[<->] (1,2) node[left] {y} -- (1,1) -- (2,1) node[below] {x};
+		\end{tikzpicture}
+		\label{fig:quer}
+	\end{figure}
 	
 	\begin{subtask}[credit=2 P]
 		Geben Sie die Federkonstante $k_i=\frac{EA}{L_i}$ der drei Stäbe in Abhängigkeit der gegebenen Größen E, A und L an.
