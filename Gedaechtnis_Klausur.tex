@@ -22,6 +22,8 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 
+\usepackage{multicol} % For pictures side by side
+
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{patterns}
 
@@ -74,16 +76,37 @@
 \begin{task}[credit=13 P]{Geometriemodelle}
 	\begin{subtask}[credit=4 P]
 		Das abgebildete Bauteil wurde mit verschiedenen Features (Konstruktionselementen) modelliert.
-		Benennen Sie die einzelnen Features und tragen Sie dies unter Berücksichtigung der Reihenfolge (vom Groben ins Feine) in die untenstehende Liste eindeutig ein, sodass eine Zuordnung der Features zur Geometrie möglich ist.
+		Benennen Sie die einzelnen Features und tragen Sie diese unter Berücksichtigung der Reihenfolge (vom Groben ins Feine) in die untenstehende Liste eindeutig ein, sodass eine Zuordnung der Features zur Geometrie möglich ist.
 		
-		\textit{Hinweis: Keine Features auf der Rückseite.} % zus. ?
+		\textit{Hinweis: Keine Features auf der Rückseite.}
 		% 7 Linien
+		\begin{multicols}{2}
+			\includegraphics[width=.5\textwidth]{Grdl_Klausur_A1a.png}
+			\columnbreak
+			\begin{itemize}
+				\item \rule{8cm}{0.15mm}
+				\item \rule{8cm}{0.15mm}
+				\item \rule{8cm}{0.15mm}
+				\item \rule{8cm}{0.15mm}
+				\item \rule{8cm}{0.15mm}
+				\item \rule{8cm}{0.15mm}
+				\item \rule{8cm}{0.15mm}
+			\end{itemize}
+		\end{multicols}
 		
 	\end{subtask}
+	
+	\pagebreak
 	
 	\begin{subtask}[credit=9 P]
 		Erstellen sie anhand der unten gegebenen Volumenprimitiven (\textbf{Q}uader und \textbf{Z}ylinder) den CSG-Baum für das abgebildete Bauteil.
 		Verwenden Sie bekannte mengentheoretische Operatoren.
+		
+		\begin{multicols}{2}
+			\includegraphics[width=.5\textwidth]{Grdl_Klausur_A1b.png}
+			\columnbreak
+			\includegraphics[width=.5\textwidth]{Graph-b-smaller.png}
+		\end{multicols}
 	\end{subtask}
 
 	
@@ -92,7 +115,7 @@
 % Aufgabe 2
 \begin{task}[credit=21 P]{Geometrische Modellierung und Volumenmodelle}
 	\begin{subtask}[credit=6 P]
-		Nennen Sie Merkmale geometrischer Modellierung.
+		Nennen Sie die Merkmale geometrischer Modellierung.
 		Verwenden Sie das gelernte Ordnungsschema.
 	\end{subtask}
 	
@@ -102,12 +125,12 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=1{,}5 P]
-		Welche Möglichkeiten zur Beeinflussung der Kurve gibt es für Hermitkurven.
+		Welche Möglichkeiten zur Beeinflussung der Kurve gibt es für Hermitkurven?
 		Skizzieren sie ein Beispiel.
 	\end{subtask}
 	
 	\begin{subtask}[credit=6 P]
-		Volumenmodelle i L Volumina vollständig zu beschreiben und Körper zu definieren.
+		Volumenmodelle sind in der Lage Volumina vollständig zu beschreiben und Körper zu definieren.
 		Nennen Sie die verschiedenen Volumenmodelle basierend auf den unterschiedlichen Datenstrukturen.
 		Beschreiben Sie jedes Volumenmodel in einem Satz.
 	\end{subtask}
@@ -127,15 +150,15 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
-		Matrizen für Translation und Rotation um y-Achse aufstellen
+		Stellen Sie die Matrizen für die Translation und Rotation um die y-Achse auf.
 	\end{subtask}
 		
 	\begin{subtask}[credit=3 P]
-		Punkt (1,7,4) translieren um $d_x=1$, $d_y=3$ und $d_z=4$
+		Translieren Sie den Punkt (1,7,4) um $d_x=1$, $d_y=3$ und $d_z=4$.
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
-		Ergebnis von voriger Aufgabe 30° um die z-Achse drehen
+		Drehen Sie das Ergebnis von voriger Aufgabe 30° um die z-Achse.
 	\end{subtask}
 \end{task}
 
@@ -151,7 +174,7 @@
 	\end{subtask}
 	
 	\begin{subtask}[credit=2{,}5 P]
-		Was sind Inputdeck und Outputdeck und welche "Informationen" oder so beeinhalten sie
+		Was sind Inputdeck und Outputdeck und welche Daten enthalten diese?
 	\end{subtask}
 	
 	% Aus Skript so ungefähr zur Einleitung:
@@ -162,12 +185,12 @@
 	\end{itemize} %?
 	
 	\begin{subtask}[credit=4 P]
-		Funktionen von Produktdatenmanagementsystemen
-		+ Methoden der Verbesserung
+		Welche wichtigen Funktionsbestandteile haben Produktdatenmanagementsysteme?
+		Nennen Sie die unterschiedlichen Ziele beim Einsatz von PDM-Systemen, sowie in welchen Teilbereichen diese Methoden zu einer Verbesserung führen.
 	\end{subtask}
 	
 	\begin{subtask}[credit=2 P]
-		2 Beispiele der Metadaten in SDM
+		Nennen Sie zwei Beispiele der Verwendung von Metadaten in SDM.
 	\end{subtask}
 \end{task}
 
